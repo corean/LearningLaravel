@@ -1,7 +1,5 @@
-/vendor
-/node_modules
-Homestead.yaml
-Homestead.json
-.env
-
 *.attr
+*.bak
+/storage/app
+/storage/framework
+/storage/logs
