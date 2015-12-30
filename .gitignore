@@ -1,5 +1,6 @@
-*.attr
+.dropbox.attr
 *.bak
+/.idea
 /storage/app
 /storage/framework
 /storage/logs
