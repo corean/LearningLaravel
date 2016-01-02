@@ -35,20 +35,25 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/comment', 'CommentsController@newComment');
 
     Route::get('sendemail', function () {
-
         $data = array(
             'name' => "Learning Laravel",
         );
-
         Mail::send('emails.welcome', $data, function ($message) {
-
             $message->from('corean@corean.biz', 'Learning Laravel');
-
             $message->to('triple@corean.biz')->subject('Learning Laravel test email');
-
         });
-
         return "Your email has been sent successfully";
-
+    });
+    Route::get('users/register', 'Auth\AuthController@getRegister');
+    Route::post('users/register', 'Auth\AuthController@postRegister');
+    Route::get('users/login', 'Auth\AuthController@getLogin');
+    Route::post('users/login', 'Auth\AuthController@postLogin');
+//    Route::get('users/logout', 'Auth\AuthController@getLogout');
+    Route::get('users/logout', function() {
+        Auth::Logout();
+        return redirect('/');
+    });
+    Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'), function () {
+        Route::get('users', 'UsersController@index');
     });
 });
