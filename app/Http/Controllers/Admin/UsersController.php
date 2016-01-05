@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-use App\Role;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\User;
+use App\Role;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests;
+use App\Http\Requests\UserEditFormRequest;
 
 class UsersController extends Controller
 {
