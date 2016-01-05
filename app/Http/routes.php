@@ -22,8 +22,9 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    Route::get('/', 'PagesController@home');
+
+
+    // Route::get('/', 'PagesController@home');
     Route::get('/about', 'PagesController@about');
     Route::get('/contact', 'TicketsController@create');
     Route::post('/contact', 'TicketsController@store');
@@ -53,7 +54,9 @@ Route::group(['middleware' => ['web']], function () {
         Auth::Logout();
         return redirect('/');
     });
-    Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'), function () {
+
+    Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['manager']), function () {
+        Route::get('/', 'PagesController@home');
         Route::get('users', [ 'as' => 'admin.user.index', 'uses' => 'UsersController@index']);
         Route::get('roles', 'RolesController@index');
         Route::get('roles/create', 'RolesController@create');
@@ -61,4 +64,3 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('users/{id?}/edit', 'UsersController@edit');
         Route::post('users/{id?}/edit','UsersController@update');
     });
-});
