@@ -6,8 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'CreateCategoriesTable' => $baseDir . '/database/migrations/2016_01_05_191953_create_categories_table.php',
+    'CreateCategoryPostTable' => $baseDir . '/database/migrations/2016_01_05_192222_create_category_post_table.php',
     'CreateCommentsTable' => $baseDir . '/database/migrations/2015_12_31_085342_create_comments_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePostsTable' => $baseDir . '/database/migrations/2016_01_05_191241_create_posts_table.php',
     'CreateTicketsTable' => $baseDir . '/database/migrations/2015_12_29_091222_create_tickets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
@@ -480,6 +483,8 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'RoleUserTableSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
+    'RolesTableSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
     'SebastianBergmann\\Comparator\\ComparisonFailure' => $vendorDir . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -518,6 +523,7 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UserTableSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'Zizaco\\Entrust\\ClassCreatorCommand' => $vendorDir . '/zizaco/entrust/src/commands/ClassCreatorCommand.php',
     'Zizaco\\Entrust\\MigrationCommand' => $vendorDir . '/zizaco/entrust/src/commands/MigrationCommand.php',
 );
