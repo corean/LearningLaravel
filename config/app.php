@@ -156,7 +156,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        'Zizaco\Entrust\EntrustServiceProvider'
+        'Zizaco\Entrust\EntrustServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
 
     ],
 
@@ -209,6 +210,7 @@ return [
         'role' => 'Zizaco\Entrust\Middleware\EntrustRole',
         'permission' => 'Zizaco\Entrust\Middleware\EntrustPermission',
         'ability' => 'Zizaco\Entrust\Middleware\EntrustAbility',
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
     ],
 
