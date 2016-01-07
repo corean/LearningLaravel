@@ -16,4 +16,8 @@ class Comment extends Model
     {
         return $this->belongsTo('App\ticket');
     }
+    public function post()
+    {
+        return $this->morphTo();
+    }
 }

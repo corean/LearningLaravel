@@ -17,6 +17,7 @@ class CommentsController extends Controller
             [
                 'post_id' => $request->get('post_id'),
                 'content' => $request->get('content'),
+                'post_type' => $request->get('post_type'),
             ]
         );
         $comment->save();
