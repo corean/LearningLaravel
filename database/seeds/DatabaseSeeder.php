@@ -55,9 +55,12 @@ class RoleUserTableSeeder extends Seeder {
         DB::table('role_user')->delete();
 
         $user = User::whereName('corean')->FirstOrFail();
-        $user->saveRoles([1]);
+        $role_id = Role::whereName('manager')->pluck('id');
+        $user->saveRoles([$role_id[0]]);
+
         $user = User::whereName('test')->FirstOrFail();
-        $user->saveRoles([2]);
+        $role_id = Role::whereName('member')->pluck('id');
+        $user->saveRoles([$role_id[0]]);
     }
 
 }
